@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev-local
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootwaa?autoReconnect=true&useSSL=false
+    username: springbootwaa
+    password: springbootwaa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: 8080

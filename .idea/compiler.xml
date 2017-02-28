@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-sample-app" />
+        <module name="springboot-waa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springboot-sample-app" target="1.8" />
+      <module name="springboot-waa" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

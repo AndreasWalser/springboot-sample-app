@@ -16,10 +16,14 @@
 package de.codecentric.springbootsample;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,6 +35,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
+    @Autowired
+    private PersonRepository repository;
+
     @RequestMapping(value = "/status", method = RequestMethod.GET)
     public String getStatus() {
 
@@ -38,4 +45,19 @@ public class HomeController {
 
         return "STILL GOING STRONG "+System.currentTimeMillis();
     }
+
+    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    public List<DBPerson> getPersons() {
+        List<DBPerson> persons = new ArrayList<DBPerson>();
+
+        Iterator<DBPerson> it = repository.findAll().iterator();
+        while (it.hasNext()) {
+            DBPerson p = it.next();
+            System.out.println(p.getId()+" "+p.getName());
+            persons.add(p);
+        }
+
+        return persons;
+    }
+
 }
