@@ -3,7 +3,8 @@ spring:
     active: dev-local
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springbootwaa?autoReconnect=true&useSSL=false
+#    url: jdbc:mysql://localhost:3306/springbootwaa?autoReconnect=true&useSSL=false
+    url: jdbc:mysql://mysql/springbootwaa?autoReconnect=true&useSSL=false
     username: springbootwaa
     password: springbootwaa
   jpa:
