@@ -3,8 +3,8 @@ spring:
     active: dev-local
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${waa_database}/${waa_schema}?autoReconnect=true&useSSL=false
 #    url: jdbc:mysql://localhost:3306/springbootwaa?autoReconnect=true&useSSL=false
-    url: jdbc:mysql://mysql/springbootwaa?autoReconnect=true&useSSL=false
     username: springbootwaa
     password: springbootwaa
   jpa:
@@ -14,3 +14,9 @@ spring:
 
 server:
   port: 8080
+
+#export waa_database=localhost:3306
+#export waa_schema=springbootwaa
+#source ~/.bashrc
+#echo $waa_database
+#echo $waa_schema
